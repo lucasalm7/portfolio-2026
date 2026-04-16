@@ -25,7 +25,7 @@ export function useProjects() {
         ]
     },
         { id: uuidv4(),
-        title: 'Itinero',
+        title: 'Itinero ooopsie',
         type: 'Illustrator / Figma',
         date: '2026-04',
         description: 'A university assignment focused on the full UX-to-UI pipeline. I led the visual identity and logo design, and collaborated with a team to build a working Figma prototype based on public user needs.',
