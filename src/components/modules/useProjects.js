@@ -15,16 +15,6 @@ export function useProjects() {
         ]
     },
         { id: uuidv4(),
-        title: 'Project 1',
-        type: 'Illustrator',
-        date: '2025-09',
-        description: 'Project input',
-        imageArray: [
-            new URL('@/assets/images/GreenLoopSquare.jpg', import.meta.url).href,
-            new URL('@/assets/images/GreenLoopSquare.jpg', import.meta.url).href,
-        ]
-    },
-        { id: uuidv4(),
         title: 'Itinero',
         type: 'Illustrator / Figma',
         date: '2026-04',
@@ -57,7 +47,17 @@ export function useProjects() {
             new URL('@/assets/images/InternationalDayExportVertical.jpg', import.meta.url).href,
             new URL('@/assets/images/InternationalDayExport.jpg', import.meta.url).href
         ]
-    }
+    },
+        { id: uuidv4(),
+        title: 'Police Brutality Awareness Infographic',
+        type: 'Illustrator',
+        date: '2026-03',
+        description: 'A university project aimed at raising awareness about police brutality and its societal impact. I designed a compelling infographic that translates complex statistics and sensitive information into a clear, accessible visual narrative. Through the use of strong typography, a restrained color palette, and thoughtful iconography, the piece emphasizes empathy, encourages critical reflection, and promotes informed public dialogue on issues of justice and accountability.',
+        imageArray: [
+            new URL('@/assets/images/PoliceThumb.jpg', import.meta.url).href,
+            new URL('@/assets/images/Police_info.jpg', import.meta.url).href,
+        ]
+    },
     ])
 
     const selectedProject = ref(null);
