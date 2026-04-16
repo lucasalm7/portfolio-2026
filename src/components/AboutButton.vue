@@ -6,13 +6,7 @@ const isOpen = ref(false);
 const visibleHeadings = ref(new Set());
 const isHovered = ref(false);
 
-const openModal = () => {
-  isOpen.value = true;
-};
 
-const closeModal = () => {
-  isOpen.value = false;
-};
 
 watch(isOpen, (newVal) => {
   if (newVal) {
@@ -46,10 +40,10 @@ watch(isOpen, async (newVal) => {
 </script>
 
 <template>
-    <button @click="openModal"
+    <button @click="isOpen = !isOpen"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
-    class="fixed left-8 top-1/2 -translate-y-1/2 z-40 w-12 md:w-16 h-12 md:h-16 rounded-full
+    class="fixed left-8 top-1/2 -translate-y-1/2 z-50 w-12 md:w-16 h-12 md:h-16 rounded-full
     bg-main-orange shadow-lg hover:shadow-xl transition-all duration-300
     flex items-center justify-center pointer-events-auto hover:cursor-pointer"
     style="perspective: 1000px;">
