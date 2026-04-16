@@ -6,7 +6,9 @@ const isOpen = ref(false);
 const visibleHeadings = ref(new Set());
 const isHovered = ref(false);
 
-
+const toggleModal = () => {
+  isOpen.value = !isOpen.value;
+};
 
 watch(isOpen, (newVal) => {
   if (newVal) {
@@ -40,7 +42,7 @@ watch(isOpen, async (newVal) => {
 </script>
 
 <template>
-    <button @click="isOpen = !isOpen"
+    <button @click="toggleModal"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
     class="fixed left-8 top-1/2 -translate-y-1/2 z-50 w-12 md:w-16 h-12 md:h-16 rounded-full
@@ -57,7 +59,7 @@ watch(isOpen, async (newVal) => {
 
 <transition name="modal">
   
-<div v-if="isOpen" class="fixed inset-0 bg-main-beige-light z-50 flex flex-col p-8 md:p-12 overflow-y-auto">
+<div v-if="isOpen" class="fixed inset-0 bg-main-beige-light z-40 flex flex-col p-8 md:p-12 overflow-y-auto">
 
     <div class="max-w-4xl mx-auto mt-16 text-center" @click.stop>
       <h1 data-heading class="font-title text-main-black uppercase font-black text-[40px] md:text-[60px] mb-8 transition-opacity duration-700" :class="{ 'opacity-100': visibleHeadings.has(0), 'opacity-30': !visibleHeadings.has(0) }">
@@ -97,7 +99,7 @@ watch(isOpen, async (newVal) => {
 </transition>
 
 
-  <button v-if="isOpen" @click="closeModal" class="fixed top-8 right-8 z-51 w-10 h-10 flex items-center justify-center transition-all duration-200 hover:opacity-60 cursor-pointer">
+  <button v-if="isOpen" @click="toggleModal" class="fixed top-8 right-8 z-51 w-10 h-10 flex items-center justify-center transition-all duration-200 hover:opacity-60 cursor-pointer">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
   </svg>
