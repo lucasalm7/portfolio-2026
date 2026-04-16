@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './base.css';
+@import "tailwindcss";
+
+@theme {
+  --color-main-orange: #A64029;
+  --color-main-beige-dark: #A68568;
+  --color-main-beige-light: #E1C39D;
+  --color-main-white: #E9E3DC;
+  --color-main-black: #1A1A1A;
+
+  --font-title: 'Inter', monospace;
+  --font-body: 'Inconsolata', monospace;
+}
+
+@layer components {
+  .close-btn {
+      @apply absolute top-4 right-4 
+         flex items-center justify-center
+         w-10 h-10 text-[#1A1A1A] 
+         transition-all duration-200 
+         hover:opacity-60
+         cursor-pointer border-none;
+  }
+
+  .window-style {
+    @apply relative bg-[#F4F4F1] rounded-[3rem]
+    w-full max-w-4xl max-h-[80vh]
+    overflow-hidden shadow-2xl flex flex-col
+  }
+
+  .highlight {
+    @apply opacity-100 transition-opacity duration-300 ease-in-out;
+  }
+
+  .nav-pill {
+  @apply px-8 py-2 rounded-full border border-white/80 
+         text-white font-bold text-xs uppercase
+         transition-all duration-300 ease-in-out
+         text-center;
+  }
+
+  .nav-pill:hover {
+    @apply bg-white text-black scale-105;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .def {
+    @apply cursor-default
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-to,
+.modal-leave-from {
+  opacity: 1;
+}
