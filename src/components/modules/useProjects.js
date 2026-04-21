@@ -194,9 +194,8 @@ export function useProjects() {
 
 
 
-
     export const contactLinks = [
-        { label: 'DOWNLOAD CV', url: '#' },
+        { label: 'DOWNLOAD CV', url: new URL('@/assets/CV_LucasAlmeida.pdf', import.meta.url).href, isDownload: true },
         { label: 'VIDEO CV', url: 'https://youtu.be/nOVMEDgZWW4' },
         { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/lucas-almeida-media' },
         { label: 'EMAIL', url: 'mailto:lucasalm.media@gmail.com' },

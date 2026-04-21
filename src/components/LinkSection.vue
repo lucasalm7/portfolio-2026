@@ -10,6 +10,7 @@ import { contactLinks } from '@/components/modules/useProjects';
         v-for="link in contactLinks" 
         :key="link.label"
         :href="link.url"
+        :download="link.isDownload ? 'CV_LucasAlmeida.pdf' : undefined"
         target="_blank"
         class="nav-pill">
         {{ link.label }}
